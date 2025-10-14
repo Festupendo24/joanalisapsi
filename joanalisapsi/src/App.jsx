@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import "./index.css";
 import logo from "./assets/psilisa.png"; // <-- substitui pelo teu ficheiro
+import ContactForm from "./components/ContactForm ";
 
 const therapies = [
   "Terapia Cognitivo-Comportamental",
@@ -18,7 +19,7 @@ export default function App() {
       <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
         <div className="max-w-5xl mx-auto flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Logotipo" className="h-10 w-auto" />
+            <img src={logo} alt="Logotipo" className="h-20 w-auto" />
             <span className="font-medium text-stone-700 text-lg hidden sm:block">
               Joana Lisa Vara
             </span>
@@ -56,17 +57,17 @@ export default function App() {
                 Aréas de Atuação
               </a>
             </li>
+             <li>
+              <a href="#online" className="hover:text-stone-500">
+                Sessões Online
+              </a>
+            </li>
             <li>
               <a href="#contacto" className="hover:text-stone-500">
                 Contacto
               </a>
             </li>
-            <li>
-              <a href="#online" className="hover:text-stone-500">
-                Sessões Online
-              </a>
-            </li>
-          </ul>
+           </ul>
         </div>
       </nav>
 
@@ -77,7 +78,7 @@ export default function App() {
           <img
             src={logo}
             alt="Logotipo Joana Lisa Vara"
-            className="mx-auto w-36 h-auto mb-4"
+            className="mx-auto w-40 h-auto mb-4"
           />
           <h1 className="text-3xl font-semibold tracking-wide">
             Joana Lisa Vara
@@ -94,7 +95,6 @@ export default function App() {
             escuta e empatia para promover o bem-estar psicológico.
           </p>
         </section>
-
         {/* Terapias */}
         <section id="terapias" className="py-16 text-center">
           <h2 className="text-xl font-medium mb-3">Terapias</h2>
@@ -109,6 +109,7 @@ export default function App() {
             ))}
           </ul>
         </section>
+        
           {/* Áreas de Atuação */}
         <section id="atuacao" className="py-16 text-center">
           <h2 className="text-xl font-medium mb-6">Áreas de Atuação</h2>
@@ -135,36 +136,31 @@ export default function App() {
           </div>
 </section>
 
-        {/* Contacto */}
-        <section id="contacto" className="py-16 text-center">
-          <h2 className="text-xl font-medium mb-3">Contacto</h2>
-          <p>📍 Rua das Flores, 25 — Lisboa</p>
-          <p>
-            📞 <a href="tel:+351912345678">+351  678</a>
-          </p>
-          <p>
-            ✉️{" "}
-            <a href="mailto:joanalisavara@gmail.com">
-              joanalisavara@gmail.com
-            </a>
-          </p>
-        </section>
+          {/* Sessões Online */}
+            <section id="online" className="py-16 text-center">
+              <h2 className="text-xl font-medium mb-3">Sessões Online</h2>
+              <p className="text-stone mb-4">
+                Realizo sessões por videoconferência via Microsoft Teams.
+              </p>
+              <a
+                href="https://teams.microsoft.com/l/meetup-join/INSERE-O-TEU-LINK"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded-2xl border border-gray-300 px-5 py-2 hover:bg-gray-50 transition"
+              >
+                Entrar no Teams
+              </a>
+            </section>
+            {/* Contacto */}
+          <section id="contacto" className="py-16 text-center">
+      <h2 className="text-xl font-medium mb-3">Contacto</h2>
+      <p className="text-stone mb-4">
+        📍 Rua das Flores, 25 — Lisboa
+      </p>
+      <ContactForm />
+    </section>
 
-        {/* Sessões Online */}
-        <section id="online" className="py-16 text-center">
-          <h2 className="text-xl font-medium mb-3">Sessões Online</h2>
-          <p className="text-stone mb-4">
-            Realizo sessões por videoconferência via Microsoft Teams.
-          </p>
-          <a
-            href="https://teams.microsoft.com/l/meetup-join/INSERE-O-TEU-LINK"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block rounded-2xl border border-gray-300 px-5 py-2 hover:bg-gray-50 transition"
-          >
-            Entrar no Teams
-          </a>
-        </section>
+  
 
         <footer className="mt-20 text-center text-sm text-stone pb-10">
           © {year} Joana Lisa Vara — Todos os direitos reservados
