@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cores de marca */
+:root {
+  --cor-fundo: #fdf8f4;
+  --cor-primaria: #3e4842;
+  --cor-secundaria: #eed9c4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-[var(--cor-primaria)] bg-[var(--cor-fundo)];
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+/* Navbar */
+nav {
+  background: rgba(253, 248, 244, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* Botões e links */
+a {
+  color: var(--cor-primaria);
+  transition: 0.2s;
+}
+
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* Secções com leve alternância */
+section:nth-child(even) {
+  background: linear-gradient(to bottom right, #fffdfa, #fdf8f4);
+  border-radius: 1.5rem;
+  padding: 4rem 1rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
