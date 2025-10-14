@@ -15,61 +15,40 @@ export default function App() {
 
   return (
     <div className="font-sans scroll-smooth">
-      {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
-        <div className="max-w-5xl mx-auto flex items-center justify-between p-4">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Logotipo" className="h-20 w-auto" />
-            <span className="font-medium text-stone-700 text-lg hidden sm:block">
-              Joana Lisa Vara
-            </span>
-          </div>
+{/* NAVBAR */}
+<nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+  <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
+    {/* Logo + Nome */}
+    <div className="flex items-center gap-2">
+      <img src={logo} alt="Logotipo" className="h-10 w-auto" /> {/* ↓ antes era h-20 */}
+      <span className="font-medium text-stone-500 text-sm hidden sm:block">
+        Joana Lisa Vara
+      </span>
+    </div>
 
-          <button
-            className="sm:hidden text-stone-700"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
+    {/* Botão mobile */}
+    <button
+      className="sm:hidden text-stone-600 text-lg"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      
+    </button>
 
-          <ul
-            className={`sm:flex gap-6 text-stone-700 text-sm font-medium ${
-              menuOpen ? "block mt-4 sm:mt-0" : "hidden sm:flex"
-            }`}
-          >
-            <li>
-              <a href="#inicio" className="hover:text-stone-500">
-                Início
-              </a>
-            </li>
-            <li>
-              <a href="#sobre" className="hover:text-stone-500">
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a href="#terapias" className="hover:text-stone-500">
-                Terapias
-              </a>
-            </li>
-            <li>
-              <a href="#atuacao" className="hover:text-stone-500">
-                Aréas de Atuação
-              </a>
-            </li>
-             <li>
-              <a href="#online" className="hover:text-stone-500">
-                Sessões Online
-              </a>
-            </li>
-            <li>
-              <a href="#contacto" className="hover:text-stone-500">
-                Contacto
-              </a>
-            </li>
-           </ul>
-        </div>
-      </nav>
+    {/* Links */}
+    <ul
+      className={`sm:flex gap-4 text-stone-600 text-sm font-medium ${
+        menuOpen ? "block mt-3 sm:mt-0" : "hidden sm:flex"
+      }`}
+    >
+      <li><a href="#inicio" className="hover:text-stone-400">Início</a></li>
+      <li><a href="#sobre" className="hover:text-stone-400">Sobre</a></li>
+      <li><a href="#terapias" className="hover:text-stone-400">Terapias</a></li>
+      <li><a href="#atuacao" className="hover:text-stone-400">Áreas de Atuação</a></li>
+      <li><a href="#online" className="hover:text-stone-400">Sessões Online</a></li>
+      <li><a href="#contacto" className="hover:text-stone-400">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
 
       {/* CONTEÚDO */}
       <div className="pt-24 max-w-3xl mx-auto px-5">
@@ -86,29 +65,33 @@ export default function App() {
           <p className="text-stone mt-1">Psicóloga • Porto</p>
         </section>
 
-        {/* Sobre */}
-        <section id="sobre" className="py-16 text-center">
-          <h2 className="text-xl font-medium mb-3">Sobre Mim</h2>
-          <p className="text-stone leading-relaxed">
-            A minha prática centra-se no equilíbrio emocional, autoconhecimento
-            e crescimento pessoal. Acredito na importância de um espaço de
-            escuta e empatia para promover o bem-estar psicológico.
-          </p>
-        </section>
-        {/* Terapias */}
-        <section id="terapias" className="py-16 text-center">
-          <h2 className="text-xl font-medium mb-3">Terapias</h2>
-          <ul className="space-y-2">
-            {therapies.map((t) => (
-              <li
-                key={t}
-                className="border border-gray-200 rounded-2xl p-3 text-center"
-              >
-                {t}
-              </li>
-            ))}
-          </ul>
-        </section>
+<section id="sobre" className="py-16">
+  <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 px-5">
+    {/* FOTO */}
+    <div className="md:w-1/2 flex justify-center">
+      <img
+        src="/src/assets/lisa.jpeg" // 📸 substitui pelo nome da tua imagem
+        alt="Joana Lisa Vara"
+        className="w-64 h-64 object-cover rounded-3xl shadow-md border border-[#eed9c4]/50"
+      />
+    </div>
+
+    {/* TEXTO */}
+    <div className="md:w-1/2 text-center md:text-left">
+      <h2 className="text-2xl font-medium mb-4 text-[var(--cor-primaria)]">
+        Sobre Mim
+      </h2>
+      <p className="text-stone-700 leading-relaxed">
+        Priorizo o equilíbrio entre corpo e mente como base para uma vida significativa.
+        Com a empatia e o cuidado como princípios orientadores, reconheço que a educação é a chave
+        para a transformação positiva e procuro contribuir para a construção de ambientes de
+        aprendizagem onde a diversidade é celebrada.
+      </p>
+    </div>
+  </div>
+</section>
+
+
         
           {/* Áreas de Atuação */}
         <section id="atuacao" className="py-16 text-center">
@@ -155,14 +138,11 @@ export default function App() {
           <section id="contacto" className="py-16 text-center">
       <h2 className="text-xl font-medium mb-3">Contacto</h2>
       <p className="text-stone mb-4">
-        📍 Rua das Flores, 25 — Lisboa
+        📍 Madalena 25 — Porto
       </p>
       <ContactForm />
     </section>
-
-  
-
-        <footer className="mt-20 text-center text-sm text-stone pb-10">
+     <footer className="mt-20 text-center text-sm text-stone pb-10">
           © {year} Joana Lisa Vara — Todos os direitos reservados
         </footer>
       </div>
