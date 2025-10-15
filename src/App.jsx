@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import "./index.css";
 import logo from "./assets/psilisa.png"; // <-- substitui pelo teu ficheiro
-import ContactForm from "./components/ContactForm ";
+import ContactForm from "./components/ContactForm";
 
 const therapies = [
   "Terapia Cognitivo-Comportamental",
