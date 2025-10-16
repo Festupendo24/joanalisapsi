@@ -72,7 +72,7 @@ export default function App() {
             {/* FOTO */}
             <div className="md:w-1/2 flex justify-center">
               <img
-                src="/src/assets/lisa.jpeg" // 📸 substitui pelo nome da tua imagem
+                src="/lisa.png" // 📸 substitui pelo nome da tua imagem
                 alt="Joana Lisa Vara"
                 className="w-64 h-64 object-cover rounded-3xl shadow-md border border-[#eed9c4]/50"
               />
