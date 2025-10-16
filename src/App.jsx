@@ -30,11 +30,11 @@ export default function App() {
           </div>
 
           {/* Botão mobile */}
-          <button
-            className="sm:hidden text-stone-600 text-lg"
+  <button
+            className="sm:hidden text-stone-700"
             onClick={() => setMenuOpen(!menuOpen)}
-          >
-
+          > 
+            ☰
           </button>
 
           {/* Links */}
@@ -97,7 +97,7 @@ export default function App() {
 
 
         {/* outras secções */}
-        <Catalogo />
+        <Catalogo/>
         {/* outras secções */}
 
 
