@@ -4,7 +4,7 @@ import logo from "./assets/psilisa.png"; // <-- substitui pelo teu ficheiro
 import ContactForm from "./components/ContactForm";
 import Catalogo from "./components/Catalogo";
 import Footer from "./components/Footer";
-
+import { Menu } from "lucide-react";
 
 const therapies = [
   "Terapia Cognitivo-Comportamental",
@@ -30,12 +30,13 @@ export default function App() {
           </div>
 
           {/* Botão mobile */}
-  <button
-            className="sm:hidden text-stone-700"
-            onClick={() => setMenuOpen(!menuOpen)}
-          > 
-            ☰
-          </button>
+          <button
+              className="sm:hidden flex items-center justify-center text-stone-700 w-10 h-10 hover:bg-stone-100 rounded-md transition"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Abrir menu"
+            >
+              <Menu size={24} />
+            </button>
 
           {/* Links */}
           <ul
@@ -44,7 +45,7 @@ export default function App() {
           >
             <li><a href="#inicio" className="hover:text-stone-400">Início</a></li>
             <li><a href="#sobre" className="hover:text-stone-400">Sobre</a></li>
-            <li><a href="#terapias" className="hover:text-stone-400">Terapias</a></li>
+            <li><a href="#catalogo" className="hover:text-stone-400">Catalogo</a></li>
             <li><a href="#atuacao" className="hover:text-stone-400">Áreas de Atuação</a></li>
             <li><a href="#online" className="hover:text-stone-400">Sessões Online</a></li>
             <li><a href="#contacto" className="hover:text-stone-400">Contacto</a></li>
@@ -93,14 +94,9 @@ export default function App() {
           </div>
         </section>
 
-
-
-
         {/* outras secções */}
         <Catalogo/>
         {/* outras secções */}
-
-
 
 
         {/* Áreas de Atuação */}
