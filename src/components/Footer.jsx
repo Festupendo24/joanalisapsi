@@ -32,7 +32,7 @@ export default function Footer() {
 
         {/* Email */}
         <a
-          href="mailto:joanalisapsi@gmail.com"
+          href="mailto:joanalisavara.psi@gmail.com"
           target="_blank"
           rel="noreferrer"
           className="hover:text-[#c4b5a1] transition"
