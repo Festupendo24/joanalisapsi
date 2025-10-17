@@ -8,30 +8,26 @@ export async function handler(event, context) {
   }
 
   try {
-    // 🔹 Recebe os dados do produto enviados pelo frontend
     const { produto } = JSON.parse(event.body);
 
-    if (!produto || !produto.nome || !produto.preco) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "Dados do produto inválidos." }),
-      };
-    }
-
-    // 🔹 Cria sessão de checkout dinâmica
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
+      // 👇 Esta linha traduz o checkout para português
+      locale: 'pt',
+
+      payment_method_types: ["card", "mbway"], // Aceita cartão e MB WAY
       mode: "payment",
+
       line_items: [
         {
           price_data: {
             currency: "eur",
             product_data: { name: produto.nome },
-            unit_amount: produto.preco, // 👈 preço dinâmico vindo do frontend (em cêntimos)
+            unit_amount: produto.preco, // em cêntimos
           },
           quantity: 1,
         },
       ],
+
       success_url: "https://joanalisa.netlify.app/sucesso",
       cancel_url: "https://joanalisa.netlify.app/erro",
     });
