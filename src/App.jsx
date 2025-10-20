@@ -73,31 +73,107 @@ export default function App() {
                   <h1 className="text-3xl font-semibold tracking-wide">
                     Joana Lisa Vara
                   </h1>
-                  <p className="text-stone mt-1">Psicóloga • Porto</p>
+                  <p className="text-stone mt-1">Psicóloga e Terapeuta Comportamental • Porto</p>
                 </section>
 
-                <section id="sobre" className="py-16">
-                  <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 px-5">
+                <section id="sobre" className="py-20 bg-stone-50">
+                  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
+
                     {/* FOTO */}
                     <div className="md:w-1/2 flex justify-center">
                       <img
                         src="/lisa.png" // 📸 substitui pelo nome da tua imagem
                         alt="Joana Lisa Vara"
-                        className="w-64 h-64 object-cover rounded-3xl shadow-md border border-[#eed9c4]/50"
+                        className="w-72 h-72 object-cover rounded-3xl shadow-md border border-[#eed9c4]/50"
                       />
                     </div>
 
                     {/* TEXTO */}
-                    <div className="md:w-1/2 text-center md:text-left">
-                      <h2 className="text-2xl font-medium mb-4 text-[var(--cor-primaria)]">
-                        Sobre Mim
-                      </h2>
-                      <p className="text-stone-700 leading-relaxed">
-                        Priorizo o equilíbrio entre corpo e mente como base para uma vida significativa.
-                        Com a empatia e o cuidado como princípios orientadores, reconheço que a educação é a chave
-                        para a transformação positiva e procuro contribuir para a construção de ambientes de
-                        aprendizagem onde a diversidade é celebrada.
+                    <div className="md:w-1/2 text-center md:text-left leading-relaxed max-w-prose mx-auto">
+                      <h2 className="text-3xl font-semibold mb-4 text-stone-700">Sobre Mim</h2>
+                      <p className="text-stone-600 leading-relaxed mb-4">
+                        Sou Mestre em Psicologia da Educação pela Universidade Lusíada do Porto e Formadora Certificada pela DGERT.
+                        Desde cedo descobri na Psicologia um caminho que me permite unir ciência, empatia e propósito — ajudando pessoas a compreenderem-se e a viverem com mais equilíbrio emocional.
                       </p>
+
+                      <p className="text-stone-600 leading-relaxed mb-4">
+                        O meu percurso tem sido marcado pela avaliação e intervenção psicológica em crianças e adolescentes, com foco na promoção do desenvolvimento emocional, social e comportamental.
+                        Tenho especial interesse em perturbações do neurodesenvolvimento, dificuldades de aprendizagem, gestão emocional e comportamentos desafiantes.
+                      </p>
+
+                      <p className="text-stone-600 leading-relaxed mb-6">
+                        Acredito que cada pessoa merece uma intervenção ajustada à sua história e às suas necessidades — com respeito, acolhimento e esperança.Realizo sessões presenciais e consultas online, para que cada família possa escolher o formato mais confortável e conveniente.
+                      </p>
+
+                      {/* ✅ Botão WhatsApp dentro do texto */}
+                      <a
+                        href="https://wa.me/351912345678?text=Olá%20Joana%2C%20gostava%20de%20marcar%20uma%20sessão!"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex items-center gap-2 bg-[#eed9c4] text-stone-700 px-6 py-3 rounded-full font-medium shadow-md hover:bg-[#e6d0bb] transition"
+                      >
+                        💬 Contacta-me no WhatsApp
+                      </a>
+
+                    </div>
+                  </div>
+                </section>
+
+
+             
+
+                {/* Áreas de Atuação */}
+                <section id="atuacao" className="py-20 bg-stone-50 text-center">
+                  <div className="max-w-5xl mx-auto px-1">
+                    <h3 className="text-3xl font-semi bold mb-4 text-stone-700 break-words whitespace-normal leading-snug">
+                      Áreas de Atuação
+                    </h3>
+
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                      {[
+                        {
+                          titulo: "👧 Avaliação e Intervenção Psicológica",
+                          descricao:
+                            "Apoio emocional e comportamental a crianças e adolescentes. Inclui avaliação psicológica e psicopedagógica, com planos de intervenção personalizados — presencial ou online.",
+                        },
+                        {
+                          titulo: "🧩 Perturbações do Neurodesenvolvimento",
+                          descricao:
+                            "Acompanhamento de crianças e jovens com Autismo (PEA), dificuldades de atenção, linguagem ou aprendizagem. Foco na comunicação, autonomia e regulação emocional.",
+                        },
+                        {
+                          titulo: "👨‍👩‍👧 Apoio Parental",
+                          descricao:
+                            "Sessões para pais e cuidadores focadas em comunicação positiva, gestão emocional e fortalecimento da relação familiar.",
+                        },
+                        {
+                          titulo: "💤 Terapia do Sono",
+                          descricao:
+                            "Intervenções personalizadas para melhorar o descanso e tratar dificuldades de sono.",
+                        },
+                        {
+                          titulo: "💬 Gestão Emocional",
+                          descricao:
+                            "Promoção do equilíbrio emocional e desenvolvimento de estratégias para lidar com o stress e a ansiedade.",
+                        },
+                        {
+                          titulo: "🌿 Depressão e Ansiedade",
+                          descricao:
+                            "Apoio psicológico para superar momentos de tristeza, medo ou desmotivação, através de estratégias de reestruturação cognitiva e emocional.",
+                        },
+                      ].map((area) => (
+                        <div
+                          key={area.titulo}
+                          className="bg-white shadow-sm border border-gray-100 rounded-2xl p-6 hover:shadow-md hover:-translate-y-1 transition transform text-left"
+                        >
+                          <h3 className="font-semibold text-lg text-stone-700 mb-3">
+                            {area.titulo}
+                          </h3>
+                          <p className="text-stone-600 text-sm leading-relaxed whitespace-pre-line">
+                            {area.descricao}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </section>
@@ -105,34 +181,6 @@ export default function App() {
                 {/* outras secções */}
                 <Catalogo />
                 {/* outras secções */}
-
-
-                {/* Áreas de Atuação */}
-                <section id="atuacao" className="py-16 text-center">
-                  <h2 className="text-xl font-medium mb-6">Áreas de Atuação</h2>
-
-                  <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto">
-                    {[
-                      { titulo: "Comportamento", descricao: "Abordagem terapêutica de padrões de  no bem-estar emocional e social." },
-                      { titulo: "Terapia do Sono", descricao: "Intervenções para melhorar a qualidade do sono e tratar insónias e distúrbios relacionados." },
-                      { titulo: "Autismo (TEA)", descricao: "Acompanhamento terapêutico para o desenvolvimento emocional, cognitivo e social." },
-                      { titulo: "Terapia ABA", descricao: "Aplicação dos princípios da Análise do Comportamento Aplicada em contextos clínicos e educacionais." },
-                      { titulo: "Gestão Emocional", descricao: "Promoção do equilíbrio emocional e autocontrolo perante situações de stress e ansiedade." },
-                      { titulo: "Depressão e Ansiedade", descricao: "Intervenções centradas no apoio e reestruturação cognitiva para o bem-estar psicológico." },
-                    ].map((area) => (
-                      <div
-                        key={area.titulo}
-                        className="bg-white shadow-sm border border-gray-100 rounded-2xl p-6 hover:shadow-md hover:-translate-y-1 transition transform"
-                      >
-                        <h3 className="font-semibold text-[var(--cor-primaria)] mb-2">
-                          {area.titulo}
-                        </h3>
-                        <p className="text-sm text-stone-600 leading-relaxed">{area.descricao}</p>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-
                 {/* Sessões Online */}
                 <section id="online" className="py-16 text-center">
                   <h2 className="text-xl font-medium mb-3">Sessões Online</h2>
@@ -148,27 +196,45 @@ export default function App() {
                     Entrar no Teams
                   </a>
                 </section>
-                {/* Contacto */}
-                <section id="contacto" className="py-16 text-center">
-                  <h2 className="text-xl font-medium mb-3">Contacto</h2>
-                  <p className="text-stone mb-4">
-                    📍 Madalena 25 — Porto
+                {/* 📬 Contacto */}
+                <section id="contacto" className="py-20 bg-stone-50 text-center">
+                  <h2 className="text-2xl font-semibold mb-6 text-stone-700">Contacto</h2>
+
+                  <p className="text-stone-600 mb-4">
+                    📍 <strong>Porto - Vila Nova de Gaia</strong>
                   </p>
-                  <a
-                    href="https://wa.me/seunumerodetelefone"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500"
-                  >
-                    📞 +351 912345678
-                  </a>
-                  <ContactForm />
+
+                  <p className="text-stone-600 mb-6">
+                    Horário: <span className="text-stone-500">Seg. a Sex. • 9h às 19h</span>
+                  </p>
+
+
+
+                  {/* Botão WhatsApp */}
+                  <div className="mt-6">
+                    <a
+                      href="https://wa.me/351912345678?text=Olá%20Joana%2C%20gostava%20de%20marcar%20uma%20sessão!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#eed9c4] text-stone-700 px-5 py-3 rounded-full font-medium shadow-sm hover:bg-[#e6d0bb] transition"
+                    >
+                      💬 Contacta-me no WhatsApp
+                    </a>
+                  </div>
+
+                  {/* Formulário de contacto */}
+                  <div className="mt-10">
+                    <ContactForm />
+                  </div>
                 </section>
-                 <Footer />
+
+                {/* 🌿 Rodapé */}
+                <Footer />
+
               </div>
             </div>
-          }  
-        />   
+          }
+        />
 
         {/* 👉 Rota de sucesso */}
         <Route path="/sucesso" element={<Sucesso />} />
